@@ -10,7 +10,7 @@ object Circlemas {
     val input = source.getLines().toList
     source.close
 
-    var stats: Map[(String, String), Int] = Map()
+
 
     val data = input.map(s => s.substring(0, s.length - 1))
       .map(_.split(" "))
@@ -21,6 +21,7 @@ object Circlemas {
           -x(3).toInt
       }))
 
+    var stats: Map[(String, String), Int] = Map()
     data.foreach(x => stats += ((x._1, x._2) -> x._3))
 
     val best1 = findBestScore(stats)
